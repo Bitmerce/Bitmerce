@@ -1,0 +1,22 @@
+{
+  "name": "MiamiBitcoinHackathon",
+  "version": "0.0.0",
+  "description": "Zero Knowledge Proof of Solvency",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Zero",
+    "Knowledge",
+    "Proof",
+    "Solvency",
+    "Bitcoin"
+  ],
+  "author": "Uwe Cerron <uwecerron@gmail.com> (http://ucerron.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "bitcore": "^0.8.6",
+    "cryptojs": "^2.5.3"
+  }
+}
