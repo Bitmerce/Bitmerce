@@ -1,5 +1,5 @@
 "use strict";
-app.controller("Wallet", ['Blockchaininfo', '$scope', '$rootScope', function(Blockchaininfo, $scope, $rootScope) {
+app.controller("Wallet", ['Blockchaininfo', '$scope', 'Database', '$rootScope', function(Blockchaininfo, $scope, Database, $rootScope) {
 	$scope.address= "18Y5ejh7PXQSgBUXLQe5fJ3KuN5Rt9tDxf";
 
 	var blockchaininfo = Blockchaininfo.resource;

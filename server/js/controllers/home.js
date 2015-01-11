@@ -21,34 +21,12 @@ $scope.transactions = [
                     ];
 
 $scope.addRow = function(){		
-	$scope.companies.push({ 'name':$scope.name, 'employees': $scope.employees, 'headoffice':$scope.headoffice });
-	$scope.name='';
-	$scope.employees='';
-	$scope.headoffice='';
+	$scope.transactions.push({ 'Currency':$scope.Currency, 'Description': $scope.employees, 'TxHash':$scope.txHash, 'Status': $scope.status });
+	$scope.Currency='';
+	$scope.Description='';
+	$scope.txHash='';
+	$scope.status = '';
 };
 
 
 }]);
-/*
-<table class="table">
-	<tr>
-		<th>Currency
-		</th>
-		<th>Description
-		</th>
-		<thBitcoin Hash
-		</th>
-		<th>Status
-		</th>
-	</tr>
-	<tr ng-repeat="transaction in transactions">
-		<td>{ {transaction.Currency}}
-		</td>
-		<td>{ {transaction.Description}}
-		</td>
-		<td>{ {transaction.TxHash'}}
-		</td>
-		<td>{ {transaction.Status}}
-		</td>
-	</tr>
-</table>*/
