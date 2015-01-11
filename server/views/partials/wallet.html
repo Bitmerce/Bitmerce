@@ -1,4 +1,4 @@
-<div ng-controller="WalletCtrl">
+<div ng-controller="Wallet">
 <div  id="current-address" class="ng-scope">
 
   <div class="h3 text-center">
@@ -10,8 +10,8 @@
     </div>
     <p class="lead text-center" id="current-address">
 
-	  <div qr-code class="col-md-2 col-md-offset-5" ></div>
-      <p  class="col-md-2 col-md-offset-4" >{{currentAddress}}</p>
+	   <qrcode version="4" error-correction-level="M" size="200" data="{{address}}"></qrcode>
+      <p  class="col-md-2 col-md-offset-4" >{{address}}</p>
     </p>  
   </div>
 

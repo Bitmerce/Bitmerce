@@ -1,4 +1,5 @@
-app.controller('highchartsController', function ($scope) {
+"use strict";
+app.controller('proofFunds', function ($scope) {
 
   $scope.chartTypes = [
     {"id": "line", "title": "Line"},

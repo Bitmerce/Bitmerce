@@ -3,7 +3,8 @@ app.factory("Blockchaininfo", ["$resource", "$window", "$http", function($resour
 
   var baseUrl = "https://blockchain.info";
 
-  var resource = $resource(baseUrl + "/", {}, {
+  return {
+        resource : $resource(baseUrl + "/", {}, {
             multiAddr: {
                 method: "GET",
                 url: baseUrl + '/multiaddr?active=:addresses',
@@ -41,7 +42,6 @@ app.factory("Blockchaininfo", ["$resource", "$window", "$http", function($resour
                 }
             }
 
-        });
-
-
+        })
+    }
 }])

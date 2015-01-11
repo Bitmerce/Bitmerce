@@ -1,11 +1,6 @@
 "use strict";
 
-var privKey = new bitcore.PrivateKey();
-var address = privKey.toAddress();
-
-console.log(address);
-
-var app = angular.module('Bitmerce', ['ng', 'ngRoute',  'ngResource', 'highcharts-ng']);
+var app = angular.module('Bitmerce', ['ng', 'ngRoute',  'ngResource', 'highcharts-ng', 'monospaced.qrcode']);
 
 app.config(function($routeProvider) {
      $routeProvider.

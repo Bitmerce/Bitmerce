@@ -1,3 +1,4 @@
+"use strict";
 app.controller('proofFunds', function ($scope) {
 
   $scope.chartTypes = [
