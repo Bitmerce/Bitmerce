@@ -9,9 +9,9 @@ this.setObject = function() {
 	gig.set("timestamp", 133702385124);
 	gig.set("user", "Uwe Cerron");
 	gig.set("currency", "USD");
-	gig.set("Description", "burrito");
+	gig.set("description", "burrito");
 	gig.set("txHash", "this is where the hash is");
-	gig.set("Status", "Pending Delivery");
+	gig.set("status", "Pending Delivery");
 	 
 	gig.save(null, {
 	  success: function(gig) {
@@ -28,33 +28,19 @@ this.setObject = function() {
 
 this.fetchObject = function() {
   query.find({
-  success: function(results) {
-    console.log("Successfully retrieved " + results.length + " gigs.");
-    // Do something with the returned Parse.Object values
-    for (var i = 0; i < results.length; i++) { 
-      var object = results[i];
-      console.log(object.id + ' - ' + object.get('user'));
-    }
-  },
-  error: function(error) {
-    console.log("Error: " + error.code + " " + error.message);
-  }
+	  success: function(results) {
+	    console.log("Successfully retrieved " + results.length + " gigs.");
+	    // Do something with the returned Parse.Object values
+	    for (var i = 0; i < results.length; i++) { 
+	      var object = results[i];
+	      console.log(object.id + ' - ' + object.get('user'));
+	    }
+	  },
+	  error: function(error) {
+	    console.log("Error: " + error.code + " " + error.message);
+	  }
+	});
 }
-
-
- /*
-*/
-
-
-
-
-/*
- setInterval(function(){
-
-
-},5000);
-*/
-
 
 });
 

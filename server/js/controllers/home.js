@@ -21,7 +21,7 @@ $scope.transactions = query.find().then(function(results) {
  // Do something with the returned Parse.Object values
 	for (var i = 0; i < results.length; i++) { 
 	  var object = results[i];
-	  holder.push({'Currency':object.get('currency'), 'Description':object.get('Description'), 'TxHash': object.get('txHash'), 'Status': object.get('status')});    
+	  holder.push({'Currency':object.get('currency'), 'Description':object.get('Description'), 'TxHash': object.get('txHash'), 'Status': object.get('Status')});    
 	}
 	console.log(holder[0]);
 	$scope.transactions = holder;
