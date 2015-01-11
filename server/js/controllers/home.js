@@ -3,7 +3,7 @@ app.controller("HomeController",[ '$rootScope', '$scope', '$location' ,function(
 
 var Gigs = Parse.Object.extend("Gigs");
 var gig = new Gigs();
- var query = new Parse.Query(Gigs);
+ var query = new Parse.Quaery(Gigs);
 
 
 
