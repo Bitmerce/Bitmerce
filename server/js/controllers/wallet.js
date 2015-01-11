@@ -9,7 +9,7 @@ app.controller("Wallet", ['Blockchaininfo', '$scope', 'Database', '$rootScope', 
 	});*/
 
 	setInterval(function(){
-		var addressBalance = blockchaininfo.multiAddr({addresses:$scope.address});
+		var addressBalance = blockchaininfo.multiAddr({addresses:"1LuckyB5VGzdZLZSBZvw8DR17iiFCpST7L"});
 		(addressBalance.wallet != undefined) ? ($scope.balance = addressBalance.wallet.final_balance) : ($scope.balance = "0");
 	},1000)
 
