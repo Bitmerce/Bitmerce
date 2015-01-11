@@ -6,6 +6,51 @@
             </h4>
         </div>
         <hr id="separator">     
+<div class="col-md-9" >
+    <div class="container-fluid" style="height:230px; border-bottom: thin solid #ccc;">
+        <div class="row text-center col-md-12"> 
+            <div style="margin-top:20px;">
+                <img alt="image" class="img-circle" height="100px" width="100px" src="../img/profile_small.jpg">
+            </div>
+            <div class="block m-t-xs"> 
+                <strong class="font-bold">David Williams</strong>
+            </div> 
+            <div class="text-muted text-xs block">Art Director <b class="caret"></b></div> 
+             </a>
+                <div>1BitcoinEaterAddressx13x1</div>
+
+                <div class="btn-group btn-group-justified" role="group" aria-label="...">
+              <div class="btn-group" role="group">
+                <button heading="Home" type="button" class="btn btn-default"><i class="fa fa-th-large"></i>Home</button>
+              </div>
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default"><i class="fa fa-group"></i>Market</button>
+              </div>
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default"><i class="fa fa-envelope-o"></i>Messages</button>
+              </div>
+              <div class="btn-group" role="group">
+                <button type="button" ng-click="logout()" class="btn btn-default"> <i class="fa fa-close"></i>logout</button>
+              </div>
+            </div>
+        </div>
+</div>
+
+
+    <div ng-controller="connect_modalCtrl" style="margin-top:10px;">
+        <div class="main-header">
+        <h2>DASHBOARD</h2>
+        <em>More information</em>
+    </div>
+
+
+    <div class="col-md-12">
+         <ng-include src="subPage"></ng-include>
+    </div>
+</div> 
+
+
+
 
     </div>
     <!-- Requests -->

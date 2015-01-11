@@ -1,9 +1,9 @@
 "use strict";
 
-var app =angular.module('Bitmerce', ["ngResource",'ngRoute',"ui.router", "ui.bootstrap"]);
-app.config(function ($routeProvider) {
+var app =angular.module('Bitmerce', ["ngResource",'ngRoute']);
+//app.config(function ($routeProvider) {
   //authentication
-    $routeProvider.when('/login',{
+    /*$routeProvider.when('/login',{
         resolve:{
           authenticate:function($location,$rootScope,WalletManager){
               console.log("authentication called");
@@ -44,7 +44,7 @@ app.config(function ($routeProvider) {
 			}
 		}
 	})
-
-});//end config
+*/
+//});//end config
 
   
