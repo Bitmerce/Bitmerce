@@ -25,8 +25,16 @@
       </div>
       </a>
     </li>
+   <li>
+      <a href="" heading="Settings" ng-click="subPage='views/partials/market.html'">
+      <div class="icon_text">
+        <i class="fa fa-group"></i>
+        <span class="text">Market</span>
+      </div>
+      </a>
+    </li>
      <li>
-      <a href=""  heading="ProofofFunds"  ng-click="subPage='views/partials/recorddocuments.html'" class="js-sub-menu-toggle">
+      <a href=""  heading="ProofofFunds"  ng-click="subPage='views/partials/proofoffunds.html'" class="js-sub-menu-toggle">
       <div class="icon_text">
         <i class="fa fa-clipboard fa-fw"></i>
         <span class="text">Proof of Funds</span>
@@ -89,6 +97,7 @@
 <!-- end sidebar content -->
 </div>
 <!--**************************************** sidemenu  ************************************************-->
+
 <div>
     <div id="overview" class='col-md-8'>
 
@@ -124,12 +133,11 @@
 </div>
 
 
-    <div ng-controller="connect_modalCtrl" style="margin-top:10px;">
+    <div  style="margin-top:10px;">
         <div class="main-header">
         <h2>DASHBOARD</h2>
         <em>More information</em>
     </div>
-
 
     <div class="col-md-12">
          <ng-include src="subPage"></ng-include>

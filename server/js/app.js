@@ -1,50 +1,35 @@
 "use strict";
 
-var app =angular.module('Bitmerce', ["ngResource",'ngRoute']);
-//app.config(function ($routeProvider) {
-  //authentication
-    /*$routeProvider.when('/login',{
-        resolve:{
-          authenticate:function($location,$rootScope,WalletManager){
-              console.log("authentication called");
-              //return true;   
-              // Entry into App
-              if( authenticated === true ){
-                  //InitController()
-                 // $location.path("/Home");
-               }
+var privKey = new bitcore.PrivateKey();
+var address = privKey.toAddress();
 
-              if (!WalletManager.isAuthenticated)
-              {
-                  $location.path('/login');
-              }
+console.log(address);
 
-              WalletManager.isAuthenticated( function(authenticated){
-                     if ( authenticated === false )
-                     {
-                     ///   $location.path( "/login" )
-                      }
-                 })            
-        }
-      }
-    });
+var app = angular.module('Bitmerce', ['ng', 'ngRoute',  'ngResource', 'highcharts-ng']);
 
-    $routeProvider.
-     when('/Home', {
-        templateUrl: 'view/home.html',
-        controller: 'HomeController'
-    }).otherwise({
-        redirectTo: '/login'
+app.config(function($routeProvider) {
+     $routeProvider.
+      when('/', {templateUrl: 'views/login.html', controller: 'AppCtrl'}).
+      when('/wallet', {templateUrl: 'views/dashboard.html', controller: 'AppCtrl'}).
+      when('/about', {templateUrl: 'about.html', controller: 'AppCtrl'}).
+      otherwise({redirectTo: '/'
       });
+});
 
-    $routeProvider.when( '/logout', {
-        resolve:{
-			logout: function($rootScope, $location) {
-			return $location.path("/login");
-			}
-		}
-	})
-*/
-//});//end config
 
-  
+app.controller('AppCtrl', ['$rootScope',
+    function ($scope) {
+   
+    setTimeout(function() {
+    var el = document.getElementById("first");
+    angular.element(el).triggerHandler("click");
+    },0);
+
+
+  $scope.logout = function(){
+    window.location.assign("/");
+  }
+
+  }]);
+
+      
