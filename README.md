@@ -1,4 +1,4 @@
 Miami Bitcoin Hackathon
 =======================
 
-Proof of Concept Zero Knowledge Proof
+Proof of Concept of non-interactive Zero Knowledge Proof
