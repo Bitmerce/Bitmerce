@@ -25,6 +25,14 @@ app.factory("Blockchaininfo", ["$resource", "$window", "$http", function($resour
                     txHash: "@txHash"
                 }
             },
+            rawBlock: {
+                method: "GET",
+                isArray: false,
+                url: baseUrl + "/rawblock/:blockHash"+"&cors=true",
+                params: {
+                    txHash: "@blockHash"
+                }
+            },
             getUnspent: {
                 method: "GET",
                 isArray: false,

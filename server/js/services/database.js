@@ -2,7 +2,7 @@
 app.service("Database", function() {
 
 
-var User = Parse.Object.extend("GameScore");
+var GameScore = Parse.Object.extend("GameScore");
 var gameScore = new GameScore();
 var query = new Parse.Query(GameScore);
 

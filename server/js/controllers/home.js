@@ -1,27 +1,39 @@
 "use strict";
 app.controller("HomeController",[ '$rootScope', '$scope', '$location' ,function($rootScope, $scope, $location){
 
-$scope.transactions = [
-                    { 'Currency':'USD',
-                    	'Description': 125000,
-                    	'TxHash': 'Bangalore',
-                    	'Status': 'Confirmed'},
-                    	{ 'Currency':'RUB',
-	                    	'Description': 100000,
-	                    	'TxHash': 'Bangalore',
-	                    	'Status': 'Pending Burrito'},
-	                    	{ 'Currency':'YEN',
-	                    		'Description': 100000,
-		                    	'TxHash': 115000,
-		                    	'Status': 'Delivered Burrito'},
-		                    	{ 'Currency':'PESO',
-			                    	'Description': 150000,
-			                    	'TxHash': 'Bangalore',
-			                   		 'Status': 'Delivered Burrito'},
-                    ];
+var Gigs = Parse.Object.extend("Gigs");
+var gig = new Gigs();
+ var query = new Parse.Query(Gigs);
+
+
+
+
+$scope.addToTable = function(currency, description, txHash, status) {
+	$scope.transactions.push({'Currency':currency, 'Description': description, 'TxHash':txHash, 'Status': status });
+	console.log($scope.transactions);
+}
+
+
+$scope.transactions = [];
+//setTimeout(function() {
+$scope.transactions = query.find().then(function(results) {
+	var holder = [];
+ // Do something with the returned Parse.Object values
+	for (var i = 0; i < results.length; i++) { 
+	  var object = results[i];
+	  holder.push({'Currency':object.get('currency'), 'Description':object.get('Description'), 'TxHash': object.get('txHash'), 'Status': object.get('status')});    
+	}
+	console.log(holder[0]);
+	$scope.transactions = holder;
+	$scope.$apply();
+	return holder;
+	 //console.log(holder);
+});
+
+console.log($scope.transactions);
 
 $scope.addRow = function(){		
-	$scope.transactions.push({ 'Currency':$scope.Currency, 'Description': $scope.employees, 'TxHash':$scope.txHash, 'Status': $scope.status });
+	$scope.transactions.push({ 'Currency':$scope.Currency, 'Description': $scope.Description, 'TxHash':$scope.txHash, 'Status': $scope.status });
 	$scope.Currency='';
 	$scope.Description='';
 	$scope.txHash='';
