@@ -22,6 +22,7 @@ gig.save(null, {
     console.log('Failed to create new object, with error code: ' + error.message);
   }
 });
+$scope.apply();
 //},4000);*/
 /*
 var query = new Parse.Query(Gig);
