@@ -7,7 +7,7 @@ app.factory("Blockchaininfo", ["$resource", "$window", "$http", function($resour
         resource : $resource(baseUrl + "/", {}, {
             multiAddr: {
                 method: "GET",
-                url: baseUrl + '/multiaddr?active=:addresses',
+                url: baseUrl + '/multiaddr?active=:addresses'+"&cors=true",
                 params: {
                     addresses: "@addresses"
                 }
@@ -15,12 +15,12 @@ app.factory("Blockchaininfo", ["$resource", "$window", "$http", function($resour
             getBlockCount: {
                 method: "GET",
                 isArray: false,
-                url: baseUrl + "/latestblock",
+                url: baseUrl + "/latestblock"+"&cors=true",
             },
             getTx: {
                 method: "GET",
                 isArray: false,
-                url: baseUrl + "/rawtx/:txHash",
+                url: baseUrl + "/rawtx/:txHash"+"&cors=true",
                 params: {
                     txHash: "@txHash"
                 }
@@ -28,7 +28,7 @@ app.factory("Blockchaininfo", ["$resource", "$window", "$http", function($resour
             getUnspent: {
                 method: "GET",
                 isArray: false,
-                url: baseUrl + "unspent?active=:addresses",
+                url: baseUrl + "unspent?active=:addresses"+"&cors=true",
                 params:{ 
                   addresses: "@addresses"
                 }

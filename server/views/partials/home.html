@@ -1,4 +1,4 @@
-<div class="widget widget-table">
+<div ng-controller="HomeController" class="widget widget-table">
 <div class="widget-header">
 	<h3><i class="fa fa-group"></i> Transaction Record</h3>
 	<em>- List of Transactions</em>
@@ -24,113 +24,25 @@
 
 			<th class="sorting_asc" tabindex="0" aria-controls="ticket-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Number: activate to sort column ascending" style="width: 83px;">Currency</th>
 
-			<th class="sorting" tabindex="0" aria-controls="ticket-table" rowspan="1" colspan="1" aria-label="Category: activate to sort column ascending" style="width: 145px;">Category</th>
+			<th class="sorting" tabindex="0" aria-controls="ticket-table" rowspan="1" colspan="1" aria-label="Category: activate to sort column ascending" style="width: 145px;">Description</th>
 
-			<th class="sorting" tabindex="0" aria-controls="ticket-table" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 75px;">About</th>
+			<th class="sorting" tabindex="0" aria-controls="ticket-table" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 75px;">txHash</th>
 			
-			<th class="sorting" tabindex="0" aria-controls="ticket-table" rowspan="1" colspan="1" aria-label="Title: activate to sort column ascending" style="width: 266px;">Bitcoin hash used</th>
-
-			<th class="sorting" tabindex="0" aria-controls="ticket-table" rowspan="1" colspan="1" aria-label="Priority: activate to sort column ascending" style="width: 110px;">Confirmation</th>
+			<th class="sorting" tabindex="0" aria-controls="ticket-table" rowspan="1" colspan="1" aria-label="Title: activate to sort column ascending" style="width: 266px;">Status</th>
 			</tr>
 		</thead>
 		<tbody>
-		<tr role="row" class="odd">
-				<td class="sorting_1">
-					<a href="#">USD</a>
-				</td>
-				<td>Front-End Site</td>
-				<td>Smith</td>
-				<td>
-					<a href="#">Product Review Problem</a>
-				</td>
-				<td>
-					<span class="label label-high">#4 - High</span>
-				</td>
-			</tr><tr role="row" class="even">
-				<td class="sorting_1">
-					<a href="#">LTC</a>
-				</td>
-				<td>Technical Support</td>
-				<td>Sean</td>
-				<td>
-					<a href="#">Can't Download the Guide Doc</a>
-				</td>
-				<td>
-					<span class="label label-medium">#5 - Medium</span>
-				</td>
-			</tr><tr role="row" class="odd">
-				<td class="sorting_1">
-					<a href="#">USD</a>
-				</td>
-				<td>General Info</td>
-				<td>Jane Doe</td>
-				<td>
-					<a href="#">Regarding Customer Support</a>
-				</td>
-				<td>
-					<span class="label label-medium">#5 - Medium</span>
-				</td>
-			</tr><tr role="row" class="even">
-				<td class="sorting_1">
-					<a href="#">RUB</a>
-				</td>
-				<td>General Info</td>
-				<td>Smith</td>
-				<td>
-					<a href="#">Can't Change My Address</a>
-				</td>
-				<td>
-					<span class="label label-urgent">#3 - Urgent</span>
-				</td>
-			</tr><tr role="row" class="odd">
-				<td class="sorting_1">
-					<a href="#">YPJ</a>
-				</td>
-				<td>Sales</td>
-				<td>Smith</td>
-				<td>
-					<a href="#">Review Tab Malfunction</a>
-				</td>
-				<td>
-					<span class="label label-low">#6 - Low</span>
-				</td>
-			</tr><tr role="row" class="even">
-				<td class="sorting_1">
-					<a href="#">USD</a>
-				</td>
-				<td>Front-End Site</td>
-				<td>John Doe</td>
-				<td>
-					<a href="#">Broken Link</a>
-				</td>
-				<td>
-					<span class="label label-emergency">#2 - Emergency</span>
-				</td>
-			</tr><tr role="row" class="odd">
-				<td class="sorting_1">
-					<a href="#">BTC</a>
-				</td>
-				<td>Sales</td>
-				<td>Jack</td>
-				<td>
-					<a href="#">Need Info About My Order Status</a>
-				</td>
-				<td>
-					<span class="label label-critical">#1 - Critical</span>
-				</td>
-			</tr><tr role="row" class="even">
-				<td class="sorting_1">
-					<a href="#">XYZ</a>
-				</td>
-				<td>Techincal Support</td>
-				<td>Darren</td>
-				<td>
-					<a href="#">Bouncing Email</a>
-				</td>
-				<td>
-					<span class="label label-critical">#1 - Critical</span>
-				</td>
-			</tr></tbody>
+		<tr ng-repeat="transaction in transactions" class="odd text-center">
+		<td>{{transaction.Currency}}
+		</td>
+		<td>{{transaction.Description}}
+		</td>
+		<td>{{transaction.TxHash}}
+		</td>
+		<td>{{transaction.Status}}
+		</td>
+		</tr>
+		</tbody>
 	</table><div class="row"></div></div>
 </div>
 </div>										
