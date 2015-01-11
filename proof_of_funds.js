@@ -1,4 +1,4 @@
-var crypto = require("CryptoJS");
+var SHA256 = require("crypto-js/sha256");
 var bitcore = require("bitcore");
 
 /*
@@ -1269,10 +1269,11 @@ function proofOfFunds() {
 
 proofOfFunds.prototype.fetchTxout = function(Block) {
  	for(var i = 0;i<Block.tx.length;i++) {
-	if(Block.tx[i].out != null)
-		console.log(Block.tx[i].out);
+	if(Block.tx[i].out != null) {
+		transactionsHashes = Block.tx[i].hash;
 	}
-	return Block;
+	}
+	return transactionsHashes;
 }
 //size of a block
 proofOfFunds.prototype.blockSize = function(obj) {
@@ -1285,8 +1286,6 @@ proofOfFunds.prototype.blockSize = function(obj) {
 }
 
 
-
-//is exchange solvent?
 proofOfFunds.prototype.isSolvent = function () {
 
 }
@@ -1298,22 +1297,28 @@ proofOfFunds.prototype.sign = function () {
 }
 
 //generate shared secret 
-proofOfFunds.prototype.random_beacon = function(chain_headers) {
-	this.shared_secret = [];
+proofOfFunds.prototype.random_beacon = function(shared_secret,chain_headers) {
 
+	//TODO: replace hmac later
+	var hmac = CryptoJS.algo.HMAC.create(CryptoJS.algo.SHA256, shared_secret);
 
+	for(var i = 0; i< chain_headers.length ;i++) {
+		   hmac.update(chain_headers[i]);
+	}
+
+    this.shared_secret = hmac.finalize();
 
 	return shared_secret;
 }
 
 //record to Blockchain
-proofOfFunds.prototype.record = function(transaction) {
-
+proofOfFunds.prototype.record = function(audit_hash) {
+	var script = bitcore.Script.buildDataOut(audit_hash);
+	return script;
 }
 
 //testing
 
-
 var proof = new proofOfFunds();
 var hello = proof.fetchTxout(raw_block);
-console.log(hello)
+//console.log(hello)
