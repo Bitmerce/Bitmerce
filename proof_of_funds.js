@@ -1297,10 +1297,13 @@ proofOfFunds.prototype.sign = function () {
 }
 
 //generate shared secret 
-proofOfFunds.prototype.random_beacon = function(shared_secret,chain_headers) {
+proofOfFunds.prototype.random_beacon = function(chain_headers) {
+
+	//generate shared secret
+	var secret = shared_secret();
 
 	//TODO: replace hmac later
-	var hmac = CryptoJS.algo.HMAC.create(CryptoJS.algo.SHA256, shared_secret);
+	var hmac = CryptoJS.algo.HMAC.create(CryptoJS.algo.SHA256, secret);
 
 	for(var i = 0; i< chain_headers.length ;i++) {
 		   hmac.update(chain_headers[i]);
@@ -1309,6 +1312,12 @@ proofOfFunds.prototype.random_beacon = function(shared_secret,chain_headers) {
     this.shared_secret = hmac.finalize();
 
 	return shared_secret;
+}
+
+//generate shared secret
+proofOfFunds.prototype.shared_secret = function() {
+
+	return "herro"
 }
 
 //record to Blockchain
