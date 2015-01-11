@@ -16,6 +16,7 @@ $scope.addToTable = function(currency, description, txHash, status) {
 
 $scope.transactions = [];
 //setTimeout(function() {
+setInterval(function() {	
 $scope.transactions = query.find().then(function(results) {
 	var holder = [];
  // Do something with the returned Parse.Object values
@@ -29,7 +30,7 @@ $scope.transactions = query.find().then(function(results) {
 	return holder;
 	 //console.log(holder);
 });
-
+}, 1000);
 console.log($scope.transactions);
 
 $scope.addRow = function(){		

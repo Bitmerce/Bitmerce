@@ -8,8 +8,10 @@ var query = new Parse.Query(Market);
 $scope.Orders = [];
 
 //poll for new notification
+function trigger() {
 setTimeout(function() {
 $scope.Orders = query.find().then(function(results) {
+
 	var holder = [];
  // Do something with the returned Parse.Object values
 	for (var i = 0; i < results.length; i++) { 
@@ -18,12 +20,14 @@ $scope.Orders = query.find().then(function(results) {
 	}
 	console.log(holder[0]);
 	$scope.Orders = holder;
-	$scope.$apply();
+	;
+		$scope.$apply();
 	return holder;
 	 //console.log(holder);
 });
 }, 2000);
-
+}
+trigger();
 $scope.addRow = function(title, description, price) {
 	gig.set("timestamp", Date.now());
 	gig.set("user", "Uwe Cerron");
@@ -36,7 +40,12 @@ $scope.addRow = function(title, description, price) {
 	gig.save(null, {
 	  success: function(gig) {
 	    // Execute any logic that should take place after the object is saved.
-	    	$scope.$apply();
+	    	trigger();
+	    	//$scope.apply(
+	    	$scope.title= "";
+	    	$scope.description= "";
+	    	$scope.price ="";
+	    	//);
 	    console.log('New object created with objectId: ' + gig.id);
 	  },
 	  error: function(gig, error) {
