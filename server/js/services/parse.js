@@ -1,2 +1,2 @@
 "use strict";
-Parse.initialize("9lIlEwBfj0Tg9EJxaMVsE6U2mNKhqLlI7cRR8Qht", "p1AsmaD58iXuCwo6PWH4veM7RYIt9wpXtRI8Xfxy");
+Parse.initialize("zjn32x4K2YRuyIERxC1YHietPfaAniqNsEshIFTL", "LO33cxhMTat0CxQvrTgJljC3ilnSs7g0Tgn0dvtP");
